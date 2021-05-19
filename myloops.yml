@@ -1,5 +1,5 @@
 ---
-  - hosts: all
+  - hosts: 172.31.43.103
     become: yes
     tasks:
       - name: install git
