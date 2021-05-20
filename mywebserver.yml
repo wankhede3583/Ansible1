@@ -11,7 +11,7 @@
     - name: I want to start webservice on ubuntu
       service:
         name: "{{ mywebpackageforubuntu }}"
-        state: stoped
+        state: stopped
       when: ansible_os_family == "Debian"
 
     - name: I want to install webserver on redhat only
