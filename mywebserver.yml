@@ -26,10 +26,4 @@
         state: started
       when: ansible_os_family == "redhat"
       
-    - name: Create a directory if it does not exist
-      file:
-        name: "{{ mywebpackageforubuntu }}"
-        path: /home/sanju/some_directory
-        state: directory
-        mode: '0755'
-      when: ansible_os_family == "Debian"
+   
