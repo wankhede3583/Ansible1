@@ -11,7 +11,7 @@
     - name: I want to start webservice on ubuntu
       service:
         name: "{{ mywebpackageforubuntu }}"
-        state: stopped
+        state: started
       when: ansible_os_family == "Debian"
 
     - name: I want to install webserver on redhat only
@@ -23,6 +23,13 @@
     - name: I want to start webservice on redhat
       service:
         name: "{{ mywebpackageforredhat }}"
-        state: restarted
+        state: started
       when: ansible_os_family == "redhat"
-
+      
+    - name: Create a directory if it does not exist
+      file:
+        name: "{{ mywebpackageforubuntu }}"
+        path: /home/sanju/some_directory
+        state: directory
+        mode: '0755'
+      when: ansible_os_family == "Debian"
