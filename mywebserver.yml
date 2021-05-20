@@ -4,13 +4,13 @@
   tasks:
     - name: i want to instll webserver on Debian only
       apt:
-        name: apache2
+        name: "{{ mywebpackageforubuntu }}"
         state: present
       when: ansible_os_family == "Debian"
 
     - name: I want to install webserver on redhat only
       yum:
-        name: httpd
+        name: "{{ mywebpackageforredhat }}"
         state: present
       when: ansible_os_family == "redhat"
 
