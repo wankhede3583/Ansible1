@@ -12,7 +12,7 @@
       service:
         name: "{{ mywebpackageforubuntu }}"
         state: started
-      when: ansible_os_family="Debian"
+      when: ansible_os_family == "Debian"
 
     - name: I want to install webserver on redhat only
       yum:
